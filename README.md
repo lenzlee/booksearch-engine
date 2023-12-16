@@ -1,11 +1,9 @@
-# booksearch-engine
-Module 21: Book Search Engine (MERN Challenge)
+## booksearch-engine
+Bootcamp Module 21: Book Search Engine (MERN Challenge)
 
-# Tech Blog
-Bootcamp Module 21: MERN Challenge - Book Search Engine
-
-## MVC Challenge: Tech Blog
+# MERN Challenge: Book Search Engine
 In this project, we were asked to take a fully functioning Google Books API search engine built with a RESTful API, and refactor it to be a GraphQL API built with Apollo Server. The app was built using the MERN stack, with a React front end, MongoDB database, and Node.js/Express.js server and API. It's already set up to allow users to save book searches to the back end. 
+
 
 ```
 The following are the requirements to fulfill the challenge:
@@ -101,13 +99,9 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
 
 ## Mockup/s Provided:
 
-* Mockups Provided
-
 ![Mockups Provided]( )
 
 ## Screenshot/s:
-
-* Screenshot 1
 
 ![Screenshot 1]( )
 
