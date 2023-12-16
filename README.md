@@ -43,7 +43,11 @@ I mostly referred to our recent lessons/activities for this project (Module 21-M
 
 * MERN stack: https://www.mongodb.com/mern-stack, https://www.mongodb.com/languages/mern-stack-tutorial
 
-* React front end: https://reactrouter.com/en/main
+* React: https://react.dev
+
+* React Dev Tools: https://react.dev/learn/react-developer-tools
+
+* React Router DOM: https://www.npmjs.com/package/react-router-dom
 
 * MongoDB database: https://www.mongodb.com/atlas/database
 
