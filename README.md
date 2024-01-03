@@ -11,9 +11,9 @@ This application was deployed to Render.
 
 ## URLs Submitted:
 
-* URL of the functional, deployed application on Render: https://booksearch-engine-yuwi.onrender.com
-
 * GitHub Repo URL: https://github.com/lenzlee/booksearch-engine
+
+* URL of the functional, deployed application on Render: https://booksearch-engine-yuwi.onrender.com
 
 ## References and Resources: 
 I mostly used our Module 21 lessons for this assignment. I also referred to the following resources:
