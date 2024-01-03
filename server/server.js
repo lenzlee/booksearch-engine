@@ -1,36 +1,50 @@
 const express = require('express');
-// Import the ApolloServer class and expressMiddleware helper function
-const { ApolloServer } = require('@apollo/server');
-const { expressMiddleware } = require('@apollo/server/express4');
+// import ApolloServer
+const { ApolloServer } = require('apollo-server-express');
+const { authMiddleware } = require('./utils/auth');
 
-// Import the two parts of a GraphQL schema
+// import our typeDefs and resolvers
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
 const PORT = process.env.PORT || 3001;
+// create a new Apollo server and pass in our schema data
 const server = new ApolloServer({
   typeDefs,
-  resolvers
+  resolvers,
+  context: authMiddleware,
 });
 
 const app = express();
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
+const path = require('path');
 // Create a new instance of an Apollo server with the GraphQL schema
-const startApolloServer = async () => {
+const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
-  
-  app.use(express.urlencoded({ extended: false }));
-  app.use(express.json());
+  // integrate our Apollo server with the Express application as middleware
+  server.applyMiddleware({ app });
 
-  app.use('/graphql', expressMiddleware(server));
+  // Serve up static assets
+  if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/build')));
+  }
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  });
 
   db.once('open', () => {
     app.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
-      console.log(`Use GraphQL at http://localhost:${PORT}/graphql`);
-    })
-  })
+      // log where we can go to test our GQL API
+      console.log(
+        `Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`
+      );
+    });
+  });
 };
 
 // Call the async function to start the server
-startApolloServer();
+startApolloServer(typeDefs, resolvers);
