@@ -18,6 +18,8 @@ This application was deployed to Render.
 ## References and Resources: 
 I mostly used our Module 21 lessons for this assignment. I also referred to the following resources:
 
+Starter Code Repo: https://github.com/coding-boot-camp/solid-broccoli
+
 Apollo Client: https://www.apollographql.com/docs/react/
 
 GraphQL: https://graphql.com/learn/what-is-graphql/
@@ -27,6 +29,30 @@ Render: https://docs.render.com/deploys
 express.js: https://www.npmjs.com/package/express
 
 Mongoose: https://www.npmjs.com/package/mongoose
+
+## How To Install This App:
+
+STEP 1: Clone my GitHub repository by typing in your terminal:
+```
+git clone git@github.com:lenzlee/booksearch-engine.git
+```
+
+STEP 2: Perform *npm install* on the root directory, the client directory, and the server directory by typing in your terminal:
+```
+cd into the root directory
+npm install
+
+cd into the client directory
+npm install
+
+cd into the server directory
+npm install
+```
+
+STEP 3: Run the app locally by typing in your terminal:
+```
+npm run develop
+```
 
 ## User Story:
 
